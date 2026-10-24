@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>论文校园直达 · 学校设置</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<h1>学校设置</h1>
+<p>配置自己学校的入口，只在这台电脑保存。不需要填写密码、验证码或 Cookie。</p>
+<p class="note">支持 WebVPN 地址映射和 EZproxy URL 模板。CARSI、OpenAthens 等纯机构认证不能直接套用；本扩展不延长学校规定的登录期限。</p>
+<label>学校名称<input id="name" placeholder="例如：我的大学"></label>
+<label>学校登录入口<input id="portal" type="url" placeholder="https://学校的官方门户域名/"></label>
+<label>访问方式<select id="mode"><option value="webvpn">WebVPN 地址映射</option><option value="template">EZproxy / URL 模板</option></select></label>
+<section id="webvpn">
+<h2>添加数据库</h2>
+<p>从学校 WebVPN 门户打开数据库，把原始网址和通过学校打开后的网址分别粘贴到下面。可粘贴主页或同一篇论文的地址。</p>
+<label>原始数据库网址<input id="original" type="url" placeholder="https://www.nature.com/"></label>
+<label>学校通道网址<input id="schoolUrl" type="url" placeholder="https://学校门户/https/编码/路径"></label>
+<button id="add" type="button">添加 / 更新此网站</button>
+<ul id="routes"></ul>
+</section>
+<section id="templateSection" hidden>
+<h2>学校 URL 模板</h2>
+<p>按学校图书馆公布的代理前缀填写。示例仅表示格式，请替换为你学校的真实地址。</p>
+<label>模板<input id="template" placeholder="https://ezproxy.your-university.edu/login?url={encodedUrl}"></label>
+<label>允许转换的论文域名（每行一个）<textarea id="hosts" rows="5" placeholder="www.nature.com&#10;link.springer.com"></textarea></label>
+</section>
+<button id="save" type="button">保存学校设置</button>
+<a id="login" hidden target="_blank" rel="noopener noreferrer">打开学校登录入口</a>
+<p id="status" role="status" aria-live="polite"></p>
+<p>保存后打开论文页，点击扩展按钮或按 <strong>Ctrl + Shift + Y</strong>。添加网站后直接保存，无需修改代码或刷新扩展。</p>
+</main><script type="module" src="options.mjs"></script></body></html>
