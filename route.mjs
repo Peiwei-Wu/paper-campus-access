@@ -44,6 +44,10 @@ export function campusUrl(input, config) {
     url = webUrl(url.searchParams.get('url') || url.searchParams.get('q'));
   }
   const host = {'nature.com': 'www.nature.com', 'sciencedirect.com': 'www.sciencedirect.com'}[url.hostname] || url.hostname;
+  if (host === 'www.sciencedirect.com') {
+    const pdfPath = url.pathname.match(/^\/science\/article\/abs\/pii\/([^/]+)\/?$/i);
+    if (pdfPath) url.pathname = `/science/article/pii/${pdfPath[1]}/pdfft`;
+  }
   const query = new URLSearchParams();
   for (const name of ['arnumber', 'tp', 'isnumber', 'doi', 'pii', 'articleId']) if (url.searchParams.has(name)) query.set(name, url.searchParams.get(name));
   const suffix = url.pathname + (query.size ? '?' + query : '') + url.hash;
