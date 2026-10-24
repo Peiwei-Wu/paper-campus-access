@@ -1,3 +1,13 @@
+<!-- 徽章区域（项目状态、版本、依赖等） -->
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Chrome-Extension-4285F4?logo=googlechrome&logoColor=white" alt="Chrome Extension">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+  <img src="https://img.shields.io/badge/Version-1.0-blue" alt="Version">
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Status">
+</p>
+
 # 📚 文献直通车
 
 一款支持自行配置学校信息的非官方 Chrome 扩展。它可以将普通论文链接**一键转换为本校授权访问链接**，并**直接沿用当前浏览器的学校登录状态**。使用它，您可以**继续使用个人 VPN**，**无需修改任何代理配置**，也**完全无需登录校园网**。
